@@ -1,0 +1,73 @@
+  method SUPPLIERSET_GET_ENTITY.
+
+    data: lv_bpid type bapi_epm_bp_id,
+          lv_product type bapi_epm_product_id,
+          ls_header type bapi_epm_bp_header,
+          ls_product TYPE bapi_epm_product_header,
+          lt_return type table of bapiret2.
+
+    READ TABLE it_key_tab INTO data(ls_key) WITH key name = 'BP_ID'.
+
+    IF sy-subrc <> 0.
+      READ TABLE it_key_tab INTO ls_key WITH key name = 'PRODUCT_ID'.
+
+      lv_product = ls_key-value.
+
+      call function 'BAPI_EPM_PRODUCT_GET_DETAIL'
+        exporting
+          product_id               = lv_product
+        IMPORTING
+          HEADERDATA               = ls_product
+*       TABLES
+*         CONVERSION_FACTORS       =
+*         RETURN                   =
+                .
+
+      lv_bpid = ls_product-supplier_id.
+    else.
+      lv_bpid = ls_key-value.
+    ENDIF.
+
+
+      IF lv_bpid is INITIAL.
+
+        me->mo_context->get_message_container( )->add_message(
+          EXPORTING
+            iv_msg_type               = 'E'                 " Message Type
+            iv_msg_id                 = 'ZOCT_MSG'                 " Message Class
+            iv_msg_number             = 000
+        ).
+
+        RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+          EXPORTING
+             message_container      = me->mo_context->get_message_container( )
+        .
+      ENDIF.
+
+      call function 'BAPI_EPM_BP_GET_DETAIL'
+        EXPORTING
+          bp_id              = lv_bpid                 " EPM: Product header data of BOR object SEPM002
+        IMPORTING
+          headerdata         = ls_header                 " EPM: Product header data of BOR object SEPM002
+        TABLES
+*          conversion_factors =                  " EPM: Product conversion factor data of BOR object SEPM002
+           return             = lt_return                 " Return Parameter
+        .
+
+      IF lt_return is NOT INITIAL.
+        me->mo_context->get_message_container( )->add_messages_from_bapi(
+          EXPORTING
+            it_bapi_messages          = lt_return                 " Return parameter table
+        ).
+
+        RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+          EXPORTING
+             message_container      = me->mo_context->get_message_container( )
+        .
+      ENDIF.
+
+
+    MOVE-CORRESPONDING ls_header to er_entity.
+
+
+  endmethod.

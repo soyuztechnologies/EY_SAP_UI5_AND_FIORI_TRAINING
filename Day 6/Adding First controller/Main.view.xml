@@ -1,0 +1,3 @@
+<mvc:View  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="mickey.controller.Main">
+	<Button text="Click Me" press="onClick"></Button>
+</mvc:View>

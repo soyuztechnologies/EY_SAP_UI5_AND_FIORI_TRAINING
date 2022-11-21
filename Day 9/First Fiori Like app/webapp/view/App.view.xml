@@ -1,0 +1,3 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" >
+    <Label text="This the our Root View" ></Label>
+</mvc:View>

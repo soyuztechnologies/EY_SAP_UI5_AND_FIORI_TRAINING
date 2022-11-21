@@ -1,0 +1,22 @@
+<mvc:View xmlns:f="sap.ui.layout.form" 
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="mickey.controller.Main">
+    <f:SimpleForm editable="true">
+        <f:content>
+            <Label text="Emp ID"/>
+            <!-- Syntax 1 to bind the property -->
+            <Input id="idEmpId" width="20%" value="{/empStr/empId}"/> 
+            <Label text="Emp Name"/>
+            <!-- Syntax 2 to bind the property -->
+            <Input id="idEmpName" width="40%" value="{path: '/empStr/empName'}"/>
+            <Label text="Salary"/>
+            <Input id="idEmpSal" width="30%" value="{= ${/empStr/empName} === 'Anubhav' ? 20000 : ${/empStr/salary}}"/>
+            <Label text="Currency"/>
+            <Input id="idCurr" width="30%" value="USD"/>
+            <Label text="Smoker" />
+            <CheckBox></CheckBox>
+        </f:content>
+    </f:SimpleForm>
+    <Button text="Default" press="onPressDefault" ></Button>
+</mvc:View>

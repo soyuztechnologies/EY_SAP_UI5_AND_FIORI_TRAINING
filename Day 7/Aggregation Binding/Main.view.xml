@@ -1,0 +1,68 @@
+<mvc:View xmlns:f="sap.ui.layout.form"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:t="sap.ui.table"
+        xmlns:core="sap.ui.core"
+        controllerName="mickey.controller.Main">
+
+        <t:Table id="idTab" rows="{/empTab}">
+        <t:columns>
+            <t:Column label="Emp Id">
+                <t:template>
+                    <Text text="{empId}" />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <t:label>
+                    <Text text="Emp Name" />
+                </t:label>
+                <t:template>
+                    <Text text="{empName}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="Salary">
+                <t:template>
+                    <Text text="{salary} {currency}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="Smoker">
+                <t:template>
+                    <Text text="{smoker}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="Gender">
+                <t:template>
+                    <Text text="{gender}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="M Status">
+                <t:template>
+                    <Text text="{mStat}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="Rating">
+                <t:template>
+                    <Text text="{rating}" />
+                </t:template>
+            </t:Column>
+        </t:columns>
+      </t:Table>
+
+    <f:SimpleForm editable="true">
+        <f:content>
+            <Label text="Emp ID" />
+            <!-- Syntax 1 to bind the property -->
+            <Input id="idEmpId" width="20%" value="{/empStr/empId}" />
+            <Label text="Emp Name" />
+            <!-- Syntax 2 to bind the property -->
+            <Input id="idEmpName" width="40%" value="{path: 'thenos>/empStr/empName'}" />
+            <Label text="Salary" />
+            <Input id="idEmpSal" width="30%" value="{= ${/empStr/empName} === 'Anubhav' ? 20000 : ${/empStr/salary}}" />
+            <Label text="Currency" />
+            <Input id="idCurr" width="30%" value="USD" />
+            <Label text="Smoker" />
+            <CheckBox></CheckBox>
+        </f:content>
+    </f:SimpleForm>
+    <Button text="Default" press="onPressDefault"></Button>
+</mvc:View>

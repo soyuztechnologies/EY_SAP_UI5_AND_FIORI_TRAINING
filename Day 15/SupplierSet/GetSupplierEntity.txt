@@ -1,0 +1,68 @@
+method SUPPLIERSET_GET_ENTITY.
+
+
+    DATA: lv_bp_id    TYPE bapi_epm_bp_id,
+          ls_header   TYPE bapi_epm_bp_header,
+          lt_return   TYPE TABLE OF bapiret2,
+          ls_prod_hdr TYPE bapi_epm_product_header,
+          lv_prod_id  TYPE bapi_epm_product_id.
+
+    "Step 1: We need to know what is the product key passed by user
+    READ TABLE it_key_tab INTO DATA(ls_key) WITH KEY name = 'BP_ID'.
+    IF sy-subrc <> 0.
+      "BECAUSE OF ASSOCIATION, WE GET PRODUCT ID ONLY
+      READ TABLE it_key_tab INTO ls_key WITH KEY name = 'PRODUCT_ID'.
+
+      lv_prod_id = ls_key-value.
+
+      CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_DETAIL'
+        EXPORTING
+          product_id = lv_prod_id                 " EPM: Product header data of BOR object SEPM002
+        IMPORTING
+          headerdata = ls_prod_hdr                 " EPM: Product header data of BOR object SEPM002
+*        TABLES
+*         conversion_factors =                  " EPM: Product conversion factor data of BOR object SEPM002
+*         return     =                  " Return Parameter
+        .
+      lv_bp_id = ls_prod_hdr-supplier_id.
+    ELSE.
+      lv_bp_id = ls_key-value.
+    ENDIF.
+
+
+    "Step 2: Read data from BAPI
+    IF sy-subrc = 0.
+      IF lv_bp_id  IS INITIAL.
+        "Extra logic - handle exceptions
+        RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+          EXPORTING
+            message_unlimited = 'Dude blank BP id is not allowed'.
+      ENDIF.
+
+      CALL FUNCTION 'BAPI_EPM_BP_GET_DETAIL'
+        EXPORTING
+          bp_id      = lv_bp_id                 " EPM: Business Partner ID to be used in BAPIs
+        IMPORTING
+          headerdata = ls_header                 " EPM: Business Partner header data ( BOR SEPM004 )
+*        TABLES
+*         contactdata =                  " EPM: Business Partner contact data ( BOR SEPM004 )
+*         return     =                  " Return Parameter
+        .
+
+      IF lt_return IS NOT INITIAL.
+
+        me->mo_context->get_message_container( )->add_messages_from_bapi(
+          EXPORTING
+            it_bapi_messages          = lt_return         ).
+
+        RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+          EXPORTING
+            message_container = me->mo_context->get_message_container( ).
+
+      ENDIF.
+    ENDIF.
+
+    "Step 3: Map Data to output strecuture from BAPI Result
+    MOVE-CORRESPONDING ls_header TO er_entity.
+
+  endmethod.

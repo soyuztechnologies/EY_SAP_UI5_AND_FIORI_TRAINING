@@ -1,0 +1,49 @@
+  method PRODUCTSET_GET_ENTITYSET.
+    data: lt_header TYPE TABLE of bapi_epm_product_header,
+          lv_top type i,
+          lv_skip type i,
+          lv_total type i,
+          ls_entity type zcl_z_first_mpc=>ts_product,
+          ls_row type bapi_epm_max_rows,
+          lt_cat_sel type table of BAPI_EPM_PRODUCT_CATEG_RANGE.
+
+
+    lv_top = is_paging-top.
+    lv_skip = is_paging-skip.
+
+    lv_total = lv_top + lv_skip.
+    ls_row-bapimaxrow = lv_total.
+
+    read TABLE IT_FILTER_SELECT_OPTIONS INTO data(ls_Sel_option) with key property = 'Category'  .
+
+    LOOP AT ls_Sel_option-select_options INTO data(ls_filters).
+
+      append value #( sign = ls_filters-sign
+                     option = ls_filters-option
+                     low = ls_filters-low
+                     high = ls_filters-high ) to lt_cat_sel.
+    ENDLOOP.
+
+*    APPEND INITIAL LINE TO et_entityset.
+**Step 1: Read the data from BAPI/SELECT
+     call FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
+       EXPORTING
+         max_rows              = ls_row                 " Maximum number of lines of hits
+        TABLES
+          headerdata            = lt_header                 " EPM: Product header data of BOR object SEPM002
+*         selparamproductid     =                  " EPM: BAPI range table for product ids
+*         selparamsuppliernames =                  " EPM: BAPI range table for company names
+          selparamcategories    = lt_cat_sel                 " EPM: Range table for product categories
+*         return                =                  " Return Parameter
+       .
+**Step 2: Move Data from BAPI to Service Output Structure
+**Step 3: Populate the table to return data out
+     IF lv_total > 0.
+       LOOP AT lt_header into data(ls_header) from lv_skip + 1 to lv_total.
+         MOVE-CORRESPONDING ls_header to ls_entity.
+         append ls_entity to et_entityset.
+       ENDLOOP.
+     else.
+       ET_ENTITYSET = CORRESPONDING #( lt_header ).
+     ENDIF.
+  endmethod.

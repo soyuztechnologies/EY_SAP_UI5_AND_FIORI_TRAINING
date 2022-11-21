@@ -1,0 +1,16 @@
+  method PRODUCTSET_DELETE_ENTITY.
+
+     data: lv_prod_id TYPE bapi_epm_product_id.
+
+    READ TABLE it_key_tab INTO data(ls_key) INDEX 1.
+    lv_prod_id = ls_key-value.
+
+    CALL FUNCTION 'BAPI_EPM_PRODUCT_DELETE'
+      EXPORTING
+        product_id    =  lv_prod_id                " EPM: Product ID
+*        persist_to_db = abap_true        " Flag: Save data to DB (yes/no)
+*      TABLES
+*        return        =                  " Return Parameter
+      .
+*    delete from snwd_pd WHERE product_id = lv_prod_id.
+  endmethod.

@@ -1,0 +1,49 @@
+  METHOD productset_update_entity.
+
+
+   data: ls_entity TYPE zcl_z_first_mpc=>TS_PRODUCT,
+          lv_prod_id type bapi_epm_product_id,
+          ls_header TYPE bapi_epm_product_header,
+          lt_return type TABLE OF bapiret2,
+          ls_header_X type bapi_epm_product_headerx.
+
+    read TABLE it_key_tab INTO data(ls_key) INDEX 1.
+
+    lv_prod_id = ls_key-value.
+
+    io_data_provider->read_entry_data(
+      IMPORTING
+        es_data = ls_entity
+    ).
+
+    MOVE-CORRESPONDING ls_entity to ls_header.
+    ls_header_x-product_id = lv_prod_id.
+    ls_header_X-name = abap_true.
+    ls_header_X-description = abap_true.
+    ls_header_X-price = abap_true.
+    ls_header_X-currency_code = abap_true.
+
+    CALL FUNCTION 'BAPI_EPM_PRODUCT_CHANGE'
+      EXPORTING
+        product_id                = lv_prod_id
+        HEADERDATA                = ls_header
+        HEADERDATAX               = ls_header_X
+     TABLES
+       RETURN                    = lt_return
+              .
+
+    IF lt_return is NOT INITIAL.
+      me->mo_context->get_message_container( )->add_messages_from_bapi(
+        EXPORTING
+          it_bapi_messages          = lt_return       ).
+
+      RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+        EXPORTING
+           message_container      = me->mo_context->get_message_container( )
+      .
+    ENDIF.
+
+    MOVE-CORRESPONDING ls_entity to er_entity.
+*    update dbtable set p = val p = vl where pk = key
+
+  ENDMETHOD.

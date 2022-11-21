@@ -1,0 +1,62 @@
+  method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~CREATE_DEEP_ENTITY.
+
+    data : ls_deep_entity type ZCL_ZBK_XX_ODATA_MPC_EXT=>ts_deep_entity,
+           ls_header      type bapi_epm_so_header,
+           lt_items       type table of bapi_epm_so_item,
+           lv_ord_id      type bapi_epm_so_id,
+           lt_return      type table of bapiret2
+          .
+
+    io_data_provider->read_entry_data(
+      IMPORTING
+        es_data = ls_deep_entity
+    ).
+
+    MOVE-CORRESPONDING ls_deep_entity-to_items to lt_items.
+    MOVE-CORRESPONDING ls_deep_entity to ls_header.
+*    clear : ls_header-changed_at, ls_header-created_at.
+    CLEAR: ls_header-created_by,
+           ls_header-changed_by.
+
+    LOOP AT lt_items ASSIGNING FIELD-SYMBOL(<fs>).
+      CLEAR: <fs>-so_id,
+             <fs>-so_item_pos,
+             <fs>-currency_code.
+      get TIME STAMP FIELD <fs>-delivery_date.
+    ENDLOOP.
+
+    CALL FUNCTION 'BAPI_EPM_SO_CREATE'
+      EXPORTING
+        headerdata          = ls_header
+*       PERSIST_TO_DB       = ABAP_TRUE
+     IMPORTING
+       SALESORDERID        = lv_ord_id
+     TABLES
+       ITEMDATA            =  lt_items
+       RETURN              = lt_return
+              .
+
+    READ TABLE lt_return with key type = 'E' TRANSPORTING NO FIELDS.
+    if sy-subrc = 0.
+      me->mo_context->get_message_container( )->add_messages_from_bapi(
+        EXPORTING
+          it_bapi_messages          = lt_return
+      ).
+
+      RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+        EXPORTING
+          message_container      =  me->mo_context->get_message_container( )
+      .
+
+    ENDIF.
+
+    ls_deep_entity-so_id = lv_ord_id.
+    me->copy_data_to_ref(
+      EXPORTING
+        is_data = ls_deep_entity
+      CHANGING
+        cr_data = er_deep_entity
+    ).
+
+
+  endmethod.

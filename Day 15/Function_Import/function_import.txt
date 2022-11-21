@@ -1,0 +1,27 @@
+method /IWBEP/IF_MGW_APPL_SRV_RUNTIME~EXECUTE_ACTION.
+ CASE IV_ACTION_NAME.
+      WHEN 'GetMostExpensiveProduct'.
+
+        data: ls_entity type zcl_z_first_mpc=>ts_product,
+              lv_category type SNWD_PRODUCT_CATEGORY.
+
+        READ TABLE IT_PARAMETER INTO data(ls_param) INDEX 1.
+        lv_category = ls_param-value.
+
+        select SINGLE * from snwd_pd into @data(ls_product) where price = (
+            select max( price ) from snwd_pd where category = @lv_category ).
+
+        MOVE-CORRESPONDING ls_product to ls_entity.
+
+        me->copy_data_to_ref(
+          exporting
+            is_data = ls_entity
+          changing
+            cr_data = ER_DATA
+        ).
+
+      WHEN 'GetMostCheapestProduct'.
+
+      WHEN OTHERS.
+    ENDCASE.
+  endmethod.

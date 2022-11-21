@@ -1,0 +1,17 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="emc2.sd.products.controller.View1">
+    <Page title="View 1">
+        <headerContent>
+            <Button icon="sap-icon://action" tooltip="Go to next screen" press="onNext"></Button>
+        </headerContent>
+        <content>
+            <!-- <Button text="Go to next" press="onNext" /> -->
+            <List items="{path : '/fruits'}" id="idFruitsColl">
+                <items>
+                    <ObjectListItem type="Navigation" title="{name}" intro="{type}"
+                    number="{price}" numberUnit="{unit}" icon="{image}"></ObjectListItem>
+
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

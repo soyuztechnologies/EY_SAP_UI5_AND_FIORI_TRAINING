@@ -1,0 +1,85 @@
+var x = 10;
+x;
+typeof(x);
+x = '20';
+typeof(x);
+x = true;
+typeof(x);
+var arrFruits = ["Apple","Banana","Cherry"];
+arrFruits.length;
+arrFruits[0];
+arrFruits[2];
+arrFruits.push("Mango");
+arrFruits;
+arrFruits[arrFruits.length - 1];
+arrFruits.splice(1,0,"Pineapple");
+arrFruits;
+arrFruits.splice(1,1);
+arrFruits;
+console.log("hello world");
+for(var i=0;i<arrFruits.length;i++){
+   var item = arrFruits[i];
+   console.log(item);
+};
+arrFruits.forEach(function(item){
+    console.log(item);
+});
+var name = "Anubhav Oberoy";
+name.split(" ");
+name.split(" ")[0].concat(" is a ui5 trainer");
+
+var x = name.split(" ")[0];
+//this is a commented code i did a shift enter here
+var y = x.concat(" is a ui5 trainer");
+
+var oEmp = { "empId": 5000, 
+             "empName": "Anubhav", 
+             "salary" : 8500, 
+             "curr": "USD" };
+oEmp.empName
+oEmp.empName = "Ananya";
+oEmp;
+
+
+var oEmp = {
+	"empId": 5000,
+	"empName": "Anubhav",
+	"salary": 8500,
+	"curr": "USD",
+	"hobbies": ["dancing", "singing", "hichaiking", "yoga", "swimming"]
+}
+oEmp.hobbies
+oEmp.hobbies.length
+
+var aEmp = [
+   {
+		"empId": 1000,
+		"empName": "Anubhav",
+		"salary": 5000,
+		"curr": "EUR"
+	},
+	{
+		"empId": 1001,
+		"empName": "Ananya",
+		"salary": 9500,
+		"curr": "USD"
+	},
+	{
+		"empId": 1002,
+		"empName": "Megha",
+		"salary": 8500,
+		"curr": "EUR"
+	},
+	{
+		"empId": 1003,
+		"empName": "Cao Li",
+		"salary": 98000,
+		"curr": "JPY"
+	}
+
+]
+
+aEmp[1].salary;
+
+
+

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <link rel="stylesheet"
+          href="css/mystyle.css">
+
+        <script>
+            function onMagic(){
+                $(".box-content").css("background","black").css("color","white");
+            }
+            function onHide(){
+                //$(".box").hide();
+                var flag = true;
+                $(".box").fadeOut(5000, function(){
+                    if (flag === true){
+                        alert("hide is complete");
+                        flag = false;
+                    }
+                });
+                //$(".box").toggle
+            }
+            function onShow(){
+                //$(".box").show();
+                $(".box").fadeIn(5000);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is HTML?</h3>
+            </div>
+            <div class="box-content">
+                <p>HTML Stands for <b><em>HyperText Markup Language</em></b>, it is used to design static web page.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is CSS?</h3>
+            </div>
+            <div class="box-content">
+                <p>CSS Stands for <b><em>Cascading Style Sheets</em></b>, it is used to format HTML Content</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is JS?</h3>
+            </div>
+            <div class="box-content">
+                <p>JS Stands for <b><em>Java Script</em></b>, it is the browser's programming language</p>
+            </div>
+        </div>
+        <div style="clear:left"></div>
+
+        <button onclick="onMagic()">Magic</button>
+        <button onclick="onHide()">Hide</button>
+        <button onclick="onShow()">Show</button>
+    </body>
+</html>

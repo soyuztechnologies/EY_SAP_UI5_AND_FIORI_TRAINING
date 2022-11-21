@@ -1,0 +1,4 @@
+<mvc:View  xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="mickey.controller.Main">
+    <Input id="idSpiderman" ></Input>
+	<Button text="Spiderman" press="onClick"></Button>
+</mvc:View>

@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="emc2.sd.products.controller.Empty">
+    <Page title="Empty View">
+        <content>
+            <Image src="https://cdn.vox-cdn.com/thumbor/St9PZQ0MFy8e1uuKjE-4emho9w4=/0x104:3200x1904/1600x900/cdn.vox-cdn.com/uploads/chorus_image/image/45660742/spiderman.0.0.jpg" />
+        </content>
+    </Page>
+</mvc:View>

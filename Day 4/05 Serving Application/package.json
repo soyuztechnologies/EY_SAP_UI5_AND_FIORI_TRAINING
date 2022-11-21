@@ -1,0 +1,16 @@
+{
+  "name": "basicsnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/ux-ui5-tooling": "^1.5.0",
+    "@ui5/cli": "^2.14.6",
+    "express": "^4.17.2"
+  }
+}

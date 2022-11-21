@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_horizon"
+                data-sap-ui-resourceroots='{
+                    "emc2.sd.products": "./"
+                }'
+                data-sap-ui-bindingSyntax="complex"> 
+        </script>
+        <script>
+ 
+            var oCompContainer = new sap.ui.core.ComponentContainer({
+                name: "emc2.sd.products"
+            });
+            oCompContainer.placeAt("content");
+
+        </script>  
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+        <div id="content2"></div>
+    </body>
+</html>

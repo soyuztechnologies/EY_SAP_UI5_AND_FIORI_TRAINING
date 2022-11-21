@@ -1,0 +1,20 @@
+<mvc:View xmlns:f="sap.ui.layout.form" 
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        controllerName="mickey.controller.Main">
+    <f:SimpleForm>
+        <f:content>
+            <Label text="Emp ID"/>
+            <Input id="idEmpId" width="20%" value="{/empStr/empId}"/>
+            <Label text="Emp Name"/>
+            <Input id="idEmpName" width="40%" value="{/empStr/empName}"/>
+            <Label text="Salary"/>
+            <Input id="idEmpSal" width="30%" value="9000"/>
+            <Label text="Currency"/>
+            <Input id="idCurr" width="30%" value="USD"/>
+            <Label text="Smoker" />
+            <CheckBox></CheckBox>
+        </f:content>
+    </f:SimpleForm>
+    <Button text="Default" press="onPressDefault" ></Button>
+</mvc:View>

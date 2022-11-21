@@ -1,0 +1,23 @@
+{
+    "BuyerId" : "100000000",
+    "BuyerName" : "SAP",
+    "CurrencyCode" : "EUR",
+    "To_Items" : [
+        {
+          "ProductId" : "HT-1000",
+          "Note" : "EPM DG: SO ID 0500000000 Item 0000000010",
+          "CurrencyCode" : "EUR",
+          "GrossAmount" : "1137.64",
+          "Quantity" : "1",
+          "QuantityUnit" : "EA"
+        },
+        {
+          "ProductId" : "HT-1001",
+          "Note" : "EPM DG: SO ID 0500000000 Item 0000000020",
+          "CurrencyCode" : "EUR",
+          "GrossAmount" : "2972.62",
+          "Quantity" : "2",
+          "QuantityUnit" : "EA"
+        }
+    ]
+}

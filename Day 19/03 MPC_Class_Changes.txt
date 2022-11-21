@@ -1,0 +1,15 @@
+types : BEGIN OF TS_DEEP_ENTITY .
+        INCLUDE TYPE TS_ORDER.
+TYPES : TO_ITEMS type standard table of TS_ORDERITEM WITH DEFAULT KEY,
+        END OF TS_DEEP_ENTITY. 
+
+
+
+    super->define( ).
+
+    me->model->get_entity_type( 'Order' )->bind_structure(
+      EXPORTING
+        iv_structure_name   = 'ZCL_ZBK_XX_ODATA_MPC_EXT=>TS_DEEP_ENTITY'
+*        iv_bind_conversions = abap_false       " Consider conversion exits
+    ).
+*    CATCH /iwbep/cx_mgw_med_exception. " Meta data exception

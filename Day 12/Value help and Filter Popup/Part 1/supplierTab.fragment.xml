@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Table id="idTab" items="{path: '/suppliers',
+                                            sorter: {path: 'name'}}" mode="MultiSelect" itemPress="onSupplierSelect">
+        <headerToolbar>
+            <Toolbar>
+                <Button text="Add New Column" press="onAddNewCol"></Button>
+                <ToolbarSpacer ></ToolbarSpacer>
+                <Button icon="sap-icon://filter" tooltip="Filter the Suppliers" press="onFilterSupplier" />
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <header>
+                    <Text text="Supplier Name" />
+                </header>
+            </Column>
+            <Column>
+                <header>
+                    <Text text="City" />
+                </header>
+            </Column>
+            <Column minScreenWidth="Tablet">
+                <header>
+                    <Text text="Since When" />
+                </header>
+            </Column>
+            <Column minScreenWidth="Tablet" demandPopin="true">
+                <header>
+                    <Text text="Contact Person" />
+                </header>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem type="Navigation">
+                <cells>
+                    <Text text="{name}" />
+                    <Input value="{city}" />
+                    <Text text="{sinceWhen}" />
+                    <Text text="{contactPerson}" />
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</core:FragmentDefinition>

@@ -1,0 +1,92 @@
+{
+    "empStr": {
+        "empId": "10001",
+        "empName": "Roger",
+        "salary": 10000,
+        "currency": "USD",
+        "smoker": false
+    },
+    "empTab": [
+        {
+            "empId": "1001",
+            "empName": "Roger",
+            "salary": 10000,
+            "currency": "USD",
+            "smoker": false,
+            "gender": "Male",
+            "mStat": "S",
+            "rating": 3
+        },
+        {
+            "empId": "1002",
+            "empName": "Sonia",
+            "salary": 9595,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "Female",
+            "mStat": "S",
+            "rating": 3
+        },
+        {
+            "empId": "1003",
+            "empName": "Bilal",
+            "salary": 5858,
+            "currency": "AED",
+            "smoker": false,
+            "gender": "Male",
+            "mStat": "M",
+            "rating": 4
+        },
+        {
+            "empId": "1004",
+            "empName": "Syed",
+            "salary": 6996,
+            "currency": "AED",
+            "smoker": true,
+            "gender": "Male",
+            "mStat": "S",
+            "rating": 2
+        },
+        {
+            "empId": "1005",
+            "empName": "Srinivas",
+            "salary": 7770,
+            "currency": "USD",
+            "smoker": false,
+            "gender": "Male",
+            "mStat": "M",
+            "rating": 4
+        },
+        {
+            "empId": "1006",
+            "empName": "Ananya",
+            "salary": 36950,
+            "currency": "EUR",
+            "smoker": false,
+            "gender": "Female",
+            "mStat": "S",
+            "rating": 5
+        },
+        {
+            "empId": "1007",
+            "empName": "Rudiger",
+            "salary": 8590,
+            "currency": "EUR",
+            "smoker": true,
+            "gender": "Male",
+            "mStat": "M",
+            "rating": 3
+        },
+        {
+            "empId": "1008",
+            "empName": "Cao Li",
+            "salary": 5880,
+            "currency": "CNY",
+            "smoker": true,
+            "gender": "Male",
+            "mStat": "M",
+            "rating": 4
+        }
+
+    ]
+}

@@ -1,0 +1,77 @@
+<mvc:View xmlns:f="sap.ui.layout.form"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m"
+        xmlns:t="sap.ui.table"
+        xmlns:core="sap.ui.core"
+        controllerName="mickey.controller.Main">
+
+    <t:Table id="idTab" visibleRowCount="5" rows="{/empTab}" selectionMode="Single" 
+    rowSelectionChange="onSelect">
+        <t:columns>
+            <t:Column label="{i18n>XLBL_EMPID}">
+                <t:template>
+                    <Text text="{empId}" />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <t:label>
+                    <Text text="{i18n>XLBL_EMPNAME}" />
+                </t:label>
+                <t:template>
+                    <Input value="{empName}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="{i18n>XLBL_SAL}">
+                <t:template>
+                    <Text text="{salary} {currency}" />
+                </t:template>
+            </t:Column>
+            <t:Column label="{i18n>XLBL_CURR}">
+                <t:template>
+                    <CheckBox selected="{smoker}"></CheckBox>
+                </t:template>
+            </t:Column>
+            <t:Column label="{i18n>XLBL_GEN}">
+                <t:template>
+                    <Image src="{gender}" width="30px" height="30px" />
+                </t:template>
+            </t:Column>
+            <t:Column label="{i18n>XLBL_MSTAT}">
+                <t:template>
+                    <Select selectedKey="{mStat}">
+                        <items>
+                            <core:Item text="Married" key="M" />
+                            <core:Item text="Single" key="S" />
+                        </items>
+                    </Select>
+                </t:template>
+            </t:Column>
+            <t:Column label="{i18n>RATE}">
+                <t:template>
+                    <RatingIndicator value="{rating}"></RatingIndicator>
+                </t:template>
+            </t:Column>
+        </t:columns>
+    </t:Table>
+
+    <f:SimpleForm editable="true" id="idSimple">
+        <f:content>
+            <Label text="{i18n>XLBL_EMPID}" />
+            <!-- Syntax 1 to bind the property -->
+            <Input id="idEmpId" width="20%" value="{empId}" />
+            <Label text="{i18n>XLBL_EMPNAME}" />
+            <!-- Syntax 2 to bind the property -->
+            <Input id="idEmpName" width="40%" value="{path: 'empName'}" />
+            <Label text="{i18n>XLBL_SAL}" />
+            <Input id="idEmpSal" width="30%" value="{= ${empName} === 'Anubhav' ? 20000 : ${salary}}" />
+            <Label text="{i18n>XLBL_CURR}" />
+            <Input id="idCurr" width="30%" value="USD" />
+            <Label text="{i18n>XLBL_SMK}" />
+            <CheckBox selected="{smoker}"></CheckBox>
+            <Label />
+            <Button text="{i18n>XBUT_FF}" press="onFlip" width="30%" ></Button>
+        </f:content>
+    </f:SimpleForm>
+    
+    <Button text="{i18n>XBUT_DEF}" press="onPressDefault"></Button>
+</mvc:View>

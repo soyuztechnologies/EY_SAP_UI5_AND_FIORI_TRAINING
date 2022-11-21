@@ -1,0 +1,9 @@
+{
+    "empStr": {
+        "empId": "10001",
+        "empName": "Roger",
+        "salary": 10000,
+        "currency": "USD",
+        "smoker": false
+    }
+}

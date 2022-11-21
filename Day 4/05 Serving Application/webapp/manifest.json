@@ -1,0 +1,6 @@
+{
+    "sap.app": {
+        "id": "mynode",
+        "type": "application"
+    }
+}

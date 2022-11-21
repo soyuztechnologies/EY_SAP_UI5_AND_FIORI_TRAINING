@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_fiori_3_dark"
+                data-sap-ui-resourceroots='{
+                    "mickey": "./"
+                }'>
+        </script>
+        <script>
+
+            //use sapui5 button class from mobile libarary
+            var oBtn = new sap.m.Button("idNoor",{
+                text: "Spiderman",
+                press: function(){
+                    alert("Spiderman is here");
+                }
+            });
+
+            oBtn.placeAt("content");
+
+        </script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>

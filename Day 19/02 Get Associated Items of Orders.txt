@@ -1,0 +1,35 @@
+  method ORDERITEMSET_GET_ENTITYSET.
+
+    data : lv_ord_id type bapi_epm_so_id,
+           lt_items  type TABLE OF BAPI_EPM_SO_ITEM,
+           ls_entity TYPE ZCL_ZBK_XX_ODATA_MPC=>TS_ORDERITEM .
+
+    read TABLE it_key_tab INTO data(ls_key) INDEX 1.
+
+    lv_ord_id = ls_key-value.
+
+    CALL FUNCTION 'CONVERSION_EXIT_ALPHA_INPUT'
+      EXPORTING
+        input         = lv_ord_id
+     IMPORTING
+       OUTPUT        = lv_ord_id
+              .
+
+
+    CALL FUNCTION 'BAPI_EPM_SO_GET_DETAIL'
+      EXPORTING
+        so_id            = lv_ord_id
+*     IMPORTING
+*       HEADERDATA       =
+     TABLES
+       ITEMDATA         = lt_items
+*       RETURN           =
+              .
+
+    LOOP AT lt_items INTO data(ls_item).
+      MOVE-CORRESPONDING ls_item to ls_entity.
+      append ls_entity to et_entityset.
+    ENDLOOP.
+
+
+  endmethod.

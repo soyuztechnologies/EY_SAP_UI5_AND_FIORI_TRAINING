@@ -1,0 +1,79 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns="sap.m" controllerName="emc2.sd.products.controller.View2">
+    <Page title="{name}" showNavButton="true" navButtonPress="onBack">
+        <content>
+            <!-- <Button text="Back" press="onBack" /> -->
+            <ObjectHeader title="{name}" intro="{type}" number="{price}" numberUnit="{unit}"
+            icon="{image}"></ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter text="More Info" icon="sap-icon://warning" key="idMore">
+                        <f:SimpleForm>
+                            <f:content>
+                                <Label text="Name" />
+                                <Text text="{name}" />
+                                <Label text="Type" />
+                                <Text text="{type}" />
+                                <Label text="Price" />
+                                <Text text="{price} {currency}" />
+                                <Label text="Benefits" />
+                                <Text text="{healthBenefits}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter text="Suppliers" icon="sap-icon://supplier" key="idSupplier">
+                        <Table id="idTab" items="{path: '/suppliers',
+                                    sorter: {path: 'name'}}" mode="MultiSelect" itemPress="onSupplierSelect">
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Button icon="sap-icon://add" text="Add New Column" press="onAddNewCol"></Button>
+                                </Toolbar>
+                            </headerToolbar>
+                            <columns>
+                                <Column>
+                                    <header>
+                                        <Text text="Supplier Name" />
+                                    </header>
+                                </Column>
+                                <Column>
+                                    <header>
+                                        <Text text="City" />
+                                    </header>
+                                </Column>
+                                <Column minScreenWidth="Tablet">
+                                    <header>
+                                        <Text text="Since When" />
+                                    </header>
+                                </Column>
+                                <Column minScreenWidth="Tablet" demandPopin="true">
+                                    <header>
+                                        <Text text="Contact Person" />
+                                    </header>
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem type="Navigation">
+                                    <cells>
+                                        <Text text="{name}" />
+                                        <Input value="{city}" />
+                                        <Text text="{sinceWhen}" />
+                                        <Text text="{contactPerson}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter text="Cities" icon="sap-icon://home" key="idCities">
+                        <Text text="Cities data will come here" ></Text>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Save" press="onSave" type="Accept"/>
+                <Button text="Cancel" press="onCancel" type="Reject"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

@@ -1,0 +1,92 @@
+{
+    "empStr": {
+        "empId": "9000",
+        "empName": "Spiderman",
+        "salary": 9999,
+        "currency": "EUR",
+        "smoker": false
+    },
+    "empTab": [
+        {
+            "empId": "9001",
+            "empName": "John Snow",
+            "salary": 5858,
+            "currency": "USD",
+            "smoker": false,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "S",
+            "rating": 3
+        },
+        {
+            "empId": "9002",
+            "empName": "Sarsi",
+            "salary": 5800,
+            "currency": "EUR",
+            "smoker": true,
+            "gender": "https://www.pinclipart.com/picdir/big/2-28998_faceless-woman-clip-art-at-clker-com-user.png",
+            "mStat": "S",
+            "rating": 3
+        },
+        {
+            "empId": "9003",
+            "empName": "Tirian",
+            "salary": 8700,
+            "currency": "AED",
+            "smoker": false,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "M",
+            "rating": 4
+        },
+        {
+            "empId": "9004",
+            "empName": "John Snow",
+            "salary": 5560,
+            "currency": "EUR",
+            "smoker": true,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "S",
+            "rating": 2
+        },
+        {
+            "empId": "9005",
+            "empName": "Robert",
+            "salary": 5555,
+            "currency": "USD",
+            "smoker": false,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "M",
+            "rating": 2
+        },
+        {
+            "empId": "9006",
+            "empName": "Denerias",
+            "salary": 56900,
+            "currency": "EUR",
+            "smoker": false,
+            "gender": "https://www.pinclipart.com/picdir/big/2-28998_faceless-woman-clip-art-at-clker-com-user.png",
+            "mStat": "S",
+            "rating": 5
+        },
+        {
+            "empId": "9007",
+            "empName": "Ned Stark",
+            "salary": 69360,
+            "currency": "USD",
+            "smoker": true,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "M",
+            "rating": 3
+        },
+        {
+            "empId": "9008",
+            "empName": "Mea Aao",
+            "salary": 5880,
+            "currency": "CNY",
+            "smoker": true,
+            "gender": "https://icon-library.com/images/person-icon-gif/person-icon-gif-10.jpg",
+            "mStat": "M",
+            "rating": 4
+        }
+
+    ]
+}

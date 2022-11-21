@@ -1,0 +1,36 @@
+  method PRODUCTSET_CREATE_ENTITY.
+
+     data: ls_entity TYPE YOUR_OWN_MPC_CLASS=>TS_PRODUCT,
+           ls_header type bapi_epm_product_header,
+           lt_ret    type TABLE OF bapiret2.
+
+*    Step 1: Read data which we receive from the screen
+      IO_DATA_PROVIDER->read_entry_data(
+        importing
+          es_data = ls_entity
+      ).
+
+      ls_header-tax_tarif_code = '1'.
+      ls_header-measure_unit = 'EA'.
+*      catch /iwbep/cx_mgw_tech_exception. " mgw technical exception
+*    Step 2: Pass that to the BAPI to create
+      MOVE-CORRESPONDING ls_entity to ls_header.
+      call function 'BAPI_EPM_PRODUCT_CREATE'
+        exporting
+          headerdata               = ls_header
+*         PERSIST_TO_DB            = ABAP_TRUE
+        TABLES
+*         CONVERSION_FACTORS       =
+          RETURN                   = lt_ret
+                .
+
+      IF lt_ret IS NOT INITIAL.
+        RAISE EXCEPTION TYPE /iwbep/cx_mgw_busi_exception
+          exporting
+             message_unlimited      = 'There is a problem during create of Product'
+        .
+      ENDIF.
+
+*    Step 3: Response of data
+      MOVE-CORRESPONDING ls_header to er_entity.
+  endmethod.

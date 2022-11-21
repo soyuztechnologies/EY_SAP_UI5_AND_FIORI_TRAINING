@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <script>
+            function onMagic(){
+                //step 1: get the object of html elements 
+                var aBoxs = document.getElementsByClassName("box-content");
+                //step 2: loop over these elements
+                for(var i=0;i<aBoxs.length;i++){
+                    //step 3: change the css of each inside the loop
+                    var item = aBoxs[i];
+                    item.style.background = "black";
+                    item.style.color = "white";
+                }
+                
+            }
+            function spiderman(){
+                //step 1: read the value of input fields
+                var oUser = document.getElementById("idUn");
+                var sUser = oUser.value;
+                //concept of chaining in JS
+                var sPwd = document.getElementById("idPwd").value;
+
+                //step 2: compare the value using if
+                if(sUser === "Anubhav" && sPwd == "demo@111"){
+                    //step 3: truthy - login
+                    debugger; //hard breakpoint
+                    document.write("login success!");
+                }else{
+                    //step 4: give error
+                    //alert("Login failed");
+                    document.getElementById("msg").innerText = "the login has failed";
+                }                 
+            }   
+        </script>
+        <link rel="stylesheet" href="css/mystyle.css">
+    </head>
+    <body>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is HTML?</h3>
+            </div>
+            <div class="box-content">
+                <p>HTML Stands for <b><em>HyperText Markup Language</em></b>, it is used to design static web page.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is CSS?</h3>
+            </div>
+            <div class="box-content">
+                <p>CSS Stands for <b><em>Cascading Style Sheets</em></b>, it is used to format HTML Content</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3 >What is JS?</h3>
+            </div>
+            <div class="box-content">
+                <p>JS Stands for <b><em>Java Script</em></b>, it is the browser's programming language</p>
+            </div>
+        </div>
+        <div style="clear:left"></div>
+
+        <button onclick="onMagic()">Magic</button>
+
+        <div>
+            <label>User</label>
+            <input id="idUn">
+        </div>
+        <div>
+            <label>password</label>
+            <input id="idPwd" type="password">
+        </div>
+        <label id="msg" style="color:red;font-family: cursive;font-weight: bolder;"></label>
+        <br>
+        <button onclick="spiderman()">Login</button>
+    </body>
+</html>

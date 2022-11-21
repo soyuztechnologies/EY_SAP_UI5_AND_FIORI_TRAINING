@@ -1,0 +1,65 @@
+<mvc:View xmlns="sap.m"
+          xmlns:l="sap.ui.layout"
+          xmlns:f="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+          xmlns:mvc="sap.ui.core.mvc"
+        controllerName="emc2.sd.products.controller.Add">
+    <Page title="Create New Products">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <f:SimpleForm id="SimpleFormChange354"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    title="New Product"
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="4"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false" >
+                    <f:content>
+                        <Label text="ID" />
+                        <Input id="name" value="{prod>/productData/PRODUCT_ID}" />
+                        <Label text="Name" />
+                        <Input value="{prod>/productData/NAME}">
+                        </Input>
+                        <Input value="{prod>/productData/DESCRIPTION}">
+                            <layoutData>
+                                <l:GridData span="XL1 L2 M2 S4" />
+                            </layoutData>
+                        </Input>
+                        <Label text="Price" />
+                        <Input value="{prod>/productData/PRICE}">
+                            <layoutData>
+                                <l:GridData span="XL1 L2 M2 S4" />
+                            </layoutData>
+                        </Input>
+                        <Select selectedKey="{prod>/productData/CURRENCY_CODE}">
+                            <items>
+                                <core:Item key="INR" text="Indian Rupee"></core:Item>
+                                <core:Item key="USD" text="US Dollor"></core:Item>
+                                <core:Item key="EUR" text="Euro"></core:Item>
+                            </items>
+                        </Select>
+                        <Label text="Supplier Id" />
+                        <Input value="{prod>/productData/SUPPLIER_ID}" />
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+        </content>
+        <footer>
+        <Toolbar >
+            <ToolbarSpacer ></ToolbarSpacer>
+            <Button text="Save" press="onSave" type="Accept"></Button>
+            <Button text="Clear" press="onClear" type="Emphasized"></Button>
+        </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

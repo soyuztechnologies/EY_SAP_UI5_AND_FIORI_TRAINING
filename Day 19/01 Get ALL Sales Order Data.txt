@@ -1,0 +1,30 @@
+  method ORDERSET_GET_ENTITYSET.
+
+    data: lt_orders type TABLE OF bapi_epm_so_header,
+          lv_top type i,
+          lv_skip type i,
+          ls_row TYPE bapi_epm_max_rows,
+          lv_total type i.
+
+    lv_top = is_paging-top.
+    lv_skip = is_paging-skip.
+
+    lv_total = lv_skip + lv_top.
+
+    ls_row-bapimaxrow = lv_total.
+
+    call FUNCTION 'BAPI_EPM_SO_GET_LIST'
+      EXPORTING
+        max_rows          = ls_row                 " EPM: Max row specifictation
+      TABLES
+        soheaderdata      =  lt_orders                " EPM: Sales Order header data of BOR object 'EpmSalesOrder'
+*        soitemdata        =                  " EPM: Sales Order Item data of BOR object 'EpmSalesOrder'
+*        selparamsoid      =                  " EPM: Range for Sales Order IDs
+*        selparambuyername =                  " EPM: Range for company name
+*        selparamproductid =                  " EPM: Range for product id
+*        return            =                  " Return Parameter
+      .
+
+    MOVE-CORRESPONDING lt_orders to et_entityset.
+
+  endmethod.

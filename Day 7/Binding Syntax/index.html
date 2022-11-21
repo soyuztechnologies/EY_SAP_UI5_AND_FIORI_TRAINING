@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_fiori_3_dark"
+                data-sap-ui-resourceroots='{
+                    "mickey": "./"
+                }'
+                data-sap-ui-bindingSyntax="complex">
+        </script>
+        <script>
+
+            //Create a view and place that it in DOM
+            var oView = new sap.ui.view({
+                viewName: "mickey.view.Main",
+                id: "idMain",
+                type: "XML"
+            });
+
+            oView.placeAt("content");
+            // oBtn.placeAt("content");
+
+        </script>
+    </head>
+    <body class="sapUiBody">
+        <div id="content"></div>
+    </body>
+</html>
