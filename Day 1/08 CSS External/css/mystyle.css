@@ -1,0 +1,76 @@
+.box-title{
+    color: blue;
+    background-color: tomato;
+    height: 20px;
+    text-align: center;
+}
+.box-content{
+    color: red;
+    height: 120px;
+    background-color: yellow;
+    border: 1px solid black;
+    padding: 3px;
+}
+.box{
+    width:140px;
+    border: 1px solid black;
+    float:left;
+    margin:5px;
+}
+input:focus{
+    background-color: brown;
+    color: white;
+    font-size: 12;
+    font-family: cursive;
+    font-style: italic;
+    font-weight: bolder;
+}
+.myImg{
+    float:left;
+    margin: 5px;
+
+}
+img{
+    width: 140px;
+    height: 140px;
+    opacity: 0.4;
+}
+img:hover{
+    opacity: 1;
+    border: 3px solid red;
+}
+li{
+    float: left;
+    padding: 10px;
+    list-style: none;
+    border: 1px solid black;
+    color: white;
+    background-color: orange;
+
+}
+li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+li:hover,li a:hover{
+    background-color: black;
+    color: red;
+}
+#music td,#music th{
+    border: 1px solid black;
+}
+#music th{
+    background-color: brown;
+    color: white;
+}
+#music{
+    border-collapse: collapse;
+}
+tr:nth-child(even){
+    background-color: gainsboro;
+}
+tr:nth-child(odd){
+    background-color: gold;
+}

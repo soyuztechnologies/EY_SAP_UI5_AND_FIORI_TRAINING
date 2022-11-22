@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <style>
+            .box-title{
+                color: blue;
+                background-color: tomato;
+                height: 20px;
+                text-align: center;
+            }
+            .box-content{
+                color: red;
+                height: 120px;
+                background-color: yellow;
+                border: 1px solid black;
+                padding: 3px;
+            }
+            .box{
+                width:180px;
+                border: 1px solid black;
+                float:left;
+                margin:5px;
+            }
+            #idName{
+                background-color: brown;
+                color: white;
+                font-size: 12;
+                font-family: cursive;
+                font-style: italic;
+                font-weight: bolder;
+            }
+            .myImg{
+                float:left;
+                margin: 5px;
+
+            }
+            img{
+                width: 140px;
+                height: 140px;
+                opacity: 0.4;
+            }
+            img:hover{
+                opacity: 1;
+                border: 3px solid red;
+            }
+            li{
+                float: left;
+                padding: 10px;
+                list-style: none;
+                border: 1px solid black;
+                color: white;
+                background-color: orange;
+
+            }
+            li a{
+                text-decoration: none;
+                color: white;
+                font-weight: bolder;
+                text-transform: uppercase;
+            }
+            li:hover,li a:hover{
+                background-color: black;
+                color: red;
+            }
+        </style>
+    </head>
+    <body style="background-color: aqua;">
+        <div class="box">
+            <div class="box-title">
+                <h3>What is HTML?</h3>
+            </div>
+            <div class="box-content">
+                <p>HTML Stands for <b><em>HyperText Markup Language</em></b>, it is used to design static web page.</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3>What is CSS?</h3>
+            </div>
+            <div class="box-content">
+                <p>CSS Stands for <b><em>Cascading Style Sheets</em></b>, it is used to format HTML Content</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title">
+                <h3>What is JS?</h3>
+            </div>
+            <div class="box-content">
+                <p>JS Stands for <b><em>Java Script</em></b>, it is the browser's programming language</p>
+            </div>
+        </div>
+
+        <div style="clear:left"></div>
+
+        <ul>
+            <li><a href="https://www.anubhavtrainings.com/">Home</a></li>
+            <li><a href="https://www.anubhavtrainings.com/faqs">Offerings</a></li>
+            <li><a href="https://www.anubhavtrainings.com/contact">Contact Us</a></li>
+            <li><a href="https://www.anubhavtrainings.com/join-us">Samples</a></li>
+        </ul>
+
+        <div style="clear:left"></div>
+
+        <div class="myImg">
+            <img src="https://www.sciencenewsforstudents.org/wp-content/uploads/2021/02/1030_LL_snow.jpg">
+        </div>
+        <div class="myImg">
+            <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/02/03/954877-aqua-line.jpg">
+        </div>
+        <div class="myImg">
+            <img src="https://d1e00ek4ebabms.cloudfront.net/production/6b7c24d0-28a7-4942-9460-5e57eb9742c0.jpg">
+        </div>
+
+        <div style="clear:left"></div>
+
+        <h3>Personal details</h3> 
+        <table>
+        <tbody>
+            <tr>
+                <td><label>Emp Name</label></td>
+                <td><input id="idName"></td>
+            </tr>
+            <tr>
+                <td><label>salary</label></td>
+                <td><input></td>
+            </tr>
+            <tr>
+                <td><label>Location</label></td>
+                <td><input></td>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>
