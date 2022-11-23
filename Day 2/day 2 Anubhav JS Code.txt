@@ -1,0 +1,108 @@
+var x = 10;
+x;
+typeof(x);
+
+x = "10";
+typeof(x);
+
+x = false;
+typeof(x);
+
+
+var arrFrits = ["Apple","Banana","Cherry"];
+arrFrits;
+arrFrits[0];
+arrFrits[2];
+arrFrits[arrFrits.length - 1];
+arrFrits.splice(1,0,"Pineapple");
+arrFrits;
+arrFrits.push("Litchi");
+arrFrits.splice(2,1);
+
+
+var allName = "";
+for(var i=0; i < arrFrits.length; i++){
+    var item = arrFrits[i];
+    allName = allName + " " + item;       
+}
+
+
+var oEmp = {
+    "empId": 100,
+    "empName": "Anubhav",
+    "salary" : 9000,
+    "currency":"EUR"    
+};
+oEmp;
+
+
+oEmp;
+oEmp.empId;
+oEmp.empName = "Ananya";
+oEmp.smoker = false;
+oEmp;
+
+
+var simple = JSON.stringify(oEmp);
+JSON.parse(simple)
+
+for(item in oEmp){
+    console.log(item);
+    console.log(oEmp[item]);    
+}
+
+
+[
+ {
+	"empId": "1",
+	"empName": "anubhav",
+	"salary": 10000,
+	"currency": "INR",
+	"joiningDate": "2022-01-01",
+	"gender": "M"
+}, 
+ {
+	"empId": "2",
+	"empName": "Ananya",
+	"salary": 6900,
+	"currency": "EUR",
+	"joiningDate": "2022-01-01",
+	"gender": "F"
+}
+]
+
+
+
+{
+  "employeeData": [
+ {
+	"empId": "1",
+	"empName": "anubhav",
+	"salary": 10000,
+	"currency": "INR",
+	"joiningDate": "2022-01-01",
+	"gender": "M"
+}, 
+ {
+	"empId": "2",
+	"empName": "Ananya",
+	"salary": 6900,
+	"currency": "EUR",
+	"joiningDate": "2022-01-01",
+	"gender": "F"
+}
+],
+  "departmentData": [
+	{
+		"dName":"Finance",
+	    "hod":"Shekhar"
+	},
+	{
+		"dName":"HR",
+	    "hod":"Rohini"
+	}
+  ]
+}
+
+
+
