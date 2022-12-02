@@ -1,0 +1,396 @@
+{
+    "fruits" :[
+        {
+            "name"           : "Banana",
+            "type"           : "Neutral",
+            "Color"          : "Yellow",
+            "healthBenefits" : "Improve blood sugar level",
+            "price"          : "₹240",
+            "unit"           : "Dozen",
+            "image"          : "https://c.ndtvimg.com/2019-04/dl9g6gn8_bananas_625x300_11_April_19.jpg?im=Resize=(1230,900)",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Apple",
+            "type"           : "Alkaline",
+            "Color"          : "Red",
+            "healthBenefits" : "Good source of antioxidants, fiber, water, and several nutrients",
+            "price"          : "₹280",
+            "unit"           : "KG",
+            "image"          : "https://5.imimg.com/data5/AK/RA/MY-68428614/apple-500x500.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Apricot",
+            "type"           : "Alkaline",
+            "Color"          : "Yellowish Orangish",
+            "healthBenefits" : "Good source of flavonoids, an antioxidant that helps to protect against inflammation and inflammatory illnesses",
+            "price"          : "₹400",
+            "unit"           : "KG",
+            "image"          : "https://5.imimg.com/data5/HG/MH/MY-3966004/apricot-500x500.jpg",
+            "status"         : "Discontinued"
+        },
+        {
+            "name"           : "Avocado",
+            "type"           : "Alkaline",
+            "Color"          : "Green",
+            "healthBenefits" : "helps to protect against heart disease and lower blood pressure",
+            "price"          : "₹900",
+            "unit"           : "KG",
+            "image"          : "https://www.pikpng.com/pngl/m/472-4721210_free-png-avocado-png-images-transparent-avocado-png.png",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Blue Berry",
+            "type"           : "Berry",
+            "Color"          : "Dark Blue",
+            "healthBenefits" : "Good anti aging and anti oxident",
+            "price"          : "₹5800",
+            "unit"           : "KG",
+            "image"          : "https://images-prod.healthline.com/hlcmsresource/images/AN_images/blueberries-1296x728-feature.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Black Berry",
+            "type"           : "Berry",
+            "Color"          : "Black",
+            "healthBenefits" : "Anti venom and good for blood circulation and helps in sugar level control",
+            "price"          : "₹3200",
+            "unit"           : "KG",
+            "image"          : "https://post.healthline.com/wp-content/uploads/2020/03/black-raspberries-732x549-thumbnail.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Cherry",
+            "type"           : "Alkaline",
+            "Color"          : "Red",
+            "healthBenefits" : "Cherries are low in calories and chock full of fiber, vitamins, minerals, nutrients, and other good-for-you ingredients.",
+            "price"          : "₹1400",
+            "unit"           : "KG",
+            "image"          : "https://www.clipartmax.com/png/middle/21-218725_cherry-clipart-free-png-transparent-images-only-clip-art-cherry-png.png",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Coconut",
+            "type"           : "Alkaline",
+            "Color"          : "Brown",
+            "healthBenefits" : "Highly nutritious",
+            "price"          : "₹25",
+            "unit"           : "PC",
+            "image"          : "https://www.pngitem.com/pimgs/m/369-3698005_coconut-transparent-file-transparent-background-coconut-png-png.png",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Custard Apple",
+            "type"           : "Neutral",
+            "Color"          : "Green",
+            "healthBenefits" : "Improves Better Cardiovascular Health",
+            "price"          : "₹430",
+            "unit"           : "Kg",
+            "image"          : "https://rukminim1.flixcart.com/image/416/416/kidgnm80-0/plant-seed/3/0/g/30-sugar-apple-sm-plus-original-imafy6jzpuasdcza.jpeg?q=70",
+            "status"         : "Out Of Stock"
+        },
+        {
+            "name"           : "Dates",
+            "type"           : "Neutral",
+            "Color"          : "Bright Red",
+            "healthBenefits" : "High in several nutrients, fiber and antioxidants",
+            "price"          : "₹800",
+            "unit"           : "KG",
+            "image"          : "https://m.media-amazon.com/images/I/61i0R-k4XJL._SX522_.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Figs",
+            "type"           : "Neutral",
+            "Color"          : "Yellow",
+            "healthBenefits" : "Good source of both calcium and potassium",
+            "price"          : "₹40",
+            "unit"           : "PC",
+            "image"          : "https://images.herzindagi.info/image/2018/Sep/why-consume-figs.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Grapefruit",
+            "type"           : "Citrus",
+            "Color"          : "Dark Pink",
+            "healthBenefits" : "It is low in calories but very rich in nutrients",
+            "price"          : "₹600",
+            "unit"           : "KG",
+            "image"          : "https://www.pngfind.com/pngs/m/12-121901_grapefruit-png-hd-background-transparent-png.png",
+            "status"         : "Discontinued"
+        },
+        {
+            "name"           : "Jackfruit",
+            "type"           : "Neutral",
+            "Color"          : "Yellow",
+            "healthBenefits" : "It is a good source of fiber",
+            "price"          : "₹200",
+            "unit"           : "PC",
+            "image"          : "https://img2.exportersindia.com/product_images/bc-full/2020/3/7124954/fresh-jackfruit-1584516088-5342134.jpeg",
+            "status"         : "Out Of Stock"
+        },
+        {
+            "name"           : "Grapes",
+            "type"           : "Citrus",
+            "Color"          : "Purple",
+            "healthBenefits" : "Packed With Nutrients, Especially Vitamins C and K",
+            "price"          : "₹900",
+            "unit"           : "KG",
+            "image"          : "https://www.freepnglogos.com/uploads/grapes-png/grapes-dimidwa-12.png",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Guava",
+            "type"           : "Neutral",
+            "Color"          : "Green",
+            "healthBenefits" : "Excellent source of dietary fiber",
+            "price"          : "₹80",
+            "unit"           : "KG",
+            "image"          : "https://thekitchencommunity.org/wp-content/uploads/2021/09/What-Does-Guava-Taste-Like.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Kiwi",
+            "type"           : "Citrus",
+            "Color"          : "Brown",
+            "healthBenefits" : "High in Vitamin C and dietary fiber",
+            "price"          : "₹900",
+            "unit"           : "KG",
+            "image"          : "https://static.libertyprim.com/files/familles/kiwi-large.jpg?1569271790",
+            "status"         : "Out Of Stock"
+        },
+        {
+            "name"           : "Lemon",
+            "type"           : "Citrus",
+            "Color"          : "Yellow",
+            "healthBenefits" : "Lowering stroke risk, Blood pressure, Cancer prevention & Maintaining a healthy complexion",
+            "price"          : "₹5",
+            "unit"           : "PC",
+            "image"          : "https://www.pngitem.com/pimgs/m/288-2887167_lemon-clipart-clear-background-lemon-clipart-png-transparent.png",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Litchi",
+            "type"           : "Citrus",
+            "Color"          : "Pinkish-White",
+            "healthBenefits" : "Good source of vitamin C",
+            "price"          : "₹800",
+            "unit"           : "KG",
+            "image"          : "https://www.jiomart.com/images/product/original/590318011/indian-litchi-pack-approx-450-g-500-g-0-20210521.jpg",
+            "status"         : "Discontinued"
+        },
+        {
+            "name"           : "Mango",
+            "type"           : "Neutral",
+            "Color"          : "Yellow",
+            "healthBenefits" : "Great source of magnesium and potassium",
+            "price"          : "₹200",
+            "unit"           : "KG",
+            "image"          : "https://images.hindustantimes.com/img/2021/06/02/1600x900/9a156550-c367-11eb-9d53-2d5cae187b44_1622619423185.jpg",
+            "status"         : "Out Of Stock"
+        },
+        {
+            "name"           : "Orange",
+            "type"           : "Citrus",
+            "Color"          : "Yellow",
+            "healthBenefits" : "Helps promote heart health, protect against chronic diseases",
+            "price"          : "₹80",
+            "unit"           : "KG",
+            "image"          : "https://png.pngtree.com/png-clipart/20190515/original/pngtree-orange-png-png-image_3619070.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Papaya",
+            "type"           : "Neutral",
+            "Color"          : "Yellowish-Orange",
+            "healthBenefits" : "Contain high levels of antioxidants vitamin A, vitamin C, and vitamin E",
+            "price"          : "₹40",
+            "unit"           : "KG",
+            "image"          : "https://www.bigbasket.com/media/uploads/p/l/40125301-2_4-fresho-papaya-large.jpg",
+            "status"         : "Available"
+        },
+        {
+            "name"           : "Pineapple",
+            "type"           : "Alkaline",
+            "Color"          : "Greenish-Yellow",
+            "healthBenefits" : "Rich in Vitamin C, promotes healthy bones",
+            "price"          : "₹80",
+            "unit"           : "PC",
+            "image"          : "https://www.seekpng.com/png/detail/797-7972301_download-transparent-pineapple.png",
+            "status"         : "Available"
+        }
+    ],
+    "suppliers" :[ 
+        {
+            "name"          :"Haldiram",
+            "city"          :"Bikaner",
+            "country"       : "India",
+            "contactPerson" : "Shivkisan",
+            "phone"         : "+91-8987876889",
+            "email"         :"ssgarawal@haldiram.com",
+            "sinceWhen"     :"1937"
+        },
+
+        {
+            "name"          :"Jockey",
+            "city"          :"Washington DC",
+            "country"       : "United States",
+            "contactPerson" : "Samuel T. Cooper",
+            "phone"         : "+1-8987876889",
+            "email"         :"stcooper@jockey.com",
+            "sinceWhen"     :"1934"
+        },
+
+        {
+            "name"          :"MK Reatil",
+            "city"          :"Bangalore",
+            "country"       : "India",
+            "contactPerson" : "Anans",
+            "phone"         : "+91-8987875889",
+            "email"         :"mdanas@mkretail.com",
+            "sinceWhen"     :"1927"
+        },
+
+        {
+            "name"          :"MDH Masala",
+            "city"          :"Sialkot",
+            "country"       : "Pakistan",
+            "contactPerson" : "Chuni Lal Mahashay",
+            "phone"         : "+91-9987876889",
+            "email"         :"chunilalM@mdh.com",
+            "sinceWhen"     :"1919"
+        },
+
+        {
+            "name"          :"Maruti Suzuki",
+            "city"          :"New Delhi",
+            "country"       : "India",
+            "contactPerson" : "Maruti",
+            "phone"         : "+91-8997876889",
+            "email"         :"msuzuki@gmail.com",
+            "sinceWhen"     :"1981"
+        },
+
+        {
+            "name"          :"Tata Motors",
+            "city"          :"Mumbai",
+            "country"       : "India",
+            "contactPerson" : "Ratan Tata",
+            "phone"         : "+91-8987876889",
+            "email"         :"ratanTata@tatamotors.com",
+            "sinceWhen"     :"1945"
+        },
+
+        {
+            "name"          :"Hindustan Unilever",
+            "city"          :"Bangalore",
+            "country"       : "India",
+            "contactPerson" : "KK Mittal",
+            "phone"         : "+91-8987876889",
+            "email"         :"kk@unilever.com",
+            "sinceWhen"     :"1857"
+        },
+
+        {
+            "name"          :"ACC Cement",
+            "city"          :"Bangalore",
+            "country"       : "India",
+            "contactPerson" : "Yuzi Chahal",
+            "phone"         : "+91-8987876889",
+            "email"         :"yuzi@gmail.com",
+            "sinceWhen"     :"2017"
+        },
+
+        {
+            "name"          :"Kanti Sweets",
+            "city"          :"Bangalore",
+            "country"       : "India",
+            "contactPerson" : "Kanti",
+            "phone"         : "+91-8987876889",
+            "email"         :"kanti@gmail.com",
+            "sinceWhen"     :"1977"
+        },
+
+        {
+            "name"          :"Magnum Health PVT ltd",
+            "city"          :"Mumbai",
+            "country"       : "India",
+            "contactPerson" : "Magnum",
+            "phone"         : "+91-8987876889",
+            "email"         :"magnum@gmail.com",
+            "sinceWhen"     :"1938"
+        }
+    ],
+    "cities" : [
+        {
+            "name" :"Bhagalpur",
+            "state" :"Bihar",
+            "population" : "5006000",
+            "famousFor" : "Silk City"
+        },
+
+        {
+            "name" :"Jamshedpur",
+            "state" :"Jharkhand",
+            "population" : "1630000",
+            "famousFor" : "Steel City of India"
+        },
+
+        {
+            "name" :"Dhanbad",
+            "state" :"Jharkhand",
+            "population" : "1348000",
+            "famousFor" : "Coal City"
+        },
+
+        {
+            "name" :"Bengaluru",
+            "state" :"Karnataka",
+            "population" : "1,27,50000",
+            "famousFor" : ""
+        },
+
+        {
+            "name" :"Mysuru",
+            "state" :"Karnataka",
+            "population" : "1235000",
+            "famousFor" : "Sandalwood City"
+        },
+
+        {
+            "name" :"Jaipur",
+            "state" :"Rajasthan",
+            "population" : "4068826",
+            "famousFor" : "Pink City Of India"
+        },
+
+        {
+            "name" :"Udaipur",
+            "state" :"Rajasthan",
+            "population" : "580000",
+            "famousFor" : "City of Lakes"
+        },
+
+        {
+            "name" :"Surat",
+            "state" :"Gujarat",
+            "population" : "7490000",
+            "famousFor" : "City of Diamonds"
+        },
+
+        {
+            "name" :"Ahmedabad",
+            "state" :"Gujarat",
+            "population" : "8253000",
+            "famousFor" : "Manchester of India"
+        },
+
+        {
+            "name" :"Thiruvananthapuram",
+            "state" :"Kerala",
+            "population" : "2691000",
+            "famousFor" : "Evergreen City of India"
+        }
+    ]
+}

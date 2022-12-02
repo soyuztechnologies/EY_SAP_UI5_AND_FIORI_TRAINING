@@ -1,4 +1,0 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-    <SelectDialog id="popup" confirm="onConfirm">
-    </SelectDialog>
-</core:FragmentDefinition>

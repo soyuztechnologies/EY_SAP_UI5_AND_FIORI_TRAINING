@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <!--It is mandatory to select atleast one item, you cant enter 
+    data which is NOT part of dropdown-->
+    <Select items="{/cities}">
+        <core:Item key="{name}" text="{name}" />
+    </Select>
+    <!--It is a combination of drop down and input field-->
+    <ComboBox items="{/cities}">
+        <core:Item key="{name}" text="{name}" />
+    </ComboBox>
+    <!--Multi Select Combo Box-->
+    <MultiComboBox items="{/cities}">
+        <core:Item key="{name}" text="{name}" />
+    </MultiComboBox>
+</core:FragmentDefinition>
