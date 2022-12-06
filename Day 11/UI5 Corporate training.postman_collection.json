@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "7cc3abd8-1ed7-4c4d-a3ad-f69027b024e1",
+		"name": "UI5 Corporate training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Free Odata Northwind - service document",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metadata of a service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/$metadata",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"$metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers Data in JSON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination concept Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$top=2&$skip=3",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$top",
+							"value": "2"
+						},
+						{
+							"key": "$skip",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Record Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers/$count",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers",
+						"$count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Filter Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$filter=City%20eq%20%27London%27",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "City%20eq%20%27London%27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Pattern Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$filter=substringof(%27Beverages%27,CompanyName)%20eq%20true",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "substringof(%27Beverages%27,CompanyName)%20eq%20true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the data by key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dependent data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)/Order_Details?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)",
+						"Order_Details"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dependent data along with main data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)?$format=json&$expand=Order_Details,Employee,Shipper",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$expand",
+							"value": "Order_Details,Employee,Shipper"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
