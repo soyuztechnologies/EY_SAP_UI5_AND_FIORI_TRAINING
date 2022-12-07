@@ -1,0 +1,705 @@
+{
+	"info": {
+		"_postman_id": "7cc3abd8-1ed7-4c4d-a3ad-f69027b024e1",
+		"name": "UI5 Corporate training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Free Odata Northwind - service document",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Metadata of a service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/$metadata",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"$metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Customers Data in JSON",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination concept Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$top=2&$skip=3",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$top",
+							"value": "2"
+						},
+						{
+							"key": "$skip",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Record Count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers/$count",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers",
+						"$count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Filter Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$filter=City%20eq%20%27London%27",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "City%20eq%20%27London%27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Pattern Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Customers?$format=json&$filter=substringof(%27Beverages%27,CompanyName)%20eq%20true",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Customers"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "substringof(%27Beverages%27,CompanyName)%20eq%20true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the data by key",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dependent data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)/Order_Details?$format=json",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)",
+						"Order_Details"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Dependent data along with main data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://services.odata.org/V3/Northwind/Northwind.svc/Orders(10251)?$format=json&$expand=Order_Details,Employee,Shipper",
+					"protocol": "https",
+					"host": [
+						"services",
+						"odata",
+						"org"
+					],
+					"path": [
+						"V3",
+						"Northwind",
+						"Northwind.svc",
+						"Orders(10251)"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$expand",
+							"value": "Order_Details,Employee,Shipper"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SAP Server : Get Service Document",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SAP Server : Get Metadata",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/$metadata",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"$metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products data",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet?$format=json",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products data - Pagination",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet?$format=json&$top=2&$skip=2",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$top",
+							"value": "2"
+						},
+						{
+							"key": "$skip",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products data - Filter",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet?$format=json&$filter=CATEGORY eq 'Mice'",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						},
+						{
+							"key": "$filter",
+							"value": "CATEGORY eq 'Mice'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product data SINGLE by key",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet('HT-1062')?$format=json",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet('HT-1062')"
+					],
+					"query": [
+						{
+							"key": "$format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product data SINGLE by key Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "wxGRRtoszm3AqZg1s2PAXQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"PRODUCT_ID\": \"EY-1010\",\r\n        \"TYPE_CODE\": \"PR\",\r\n        \"CATEGORY\": \"Mice\",\r\n        \"NAME\": \"Anubhav product\",\r\n        \"DESCRIPTION\": \"Corporate Training on SAP UI5\",\r\n        \"SUPPLIER_ID\": \"0100000073\",\r\n        \"SUPPLIER_NAME\": \"Developement Para O Governo\",\r\n        \"TAX_TARIF_CODE\": \"1 \",\r\n        \"MEASURE_UNIT\": \"EA\",\r\n        \"PRICE\": \"11.00\",\r\n        \"CURRENCY_CODE\": \"ARS\",\r\n        \"DIM_UNIT\": \"CM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product data SINGLE by key Copy 2",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "welcome@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "mob5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-csrf-token",
+						"value": "wxGRRtoszm3AqZg1s2PAXQ==",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"PRODUCT_ID\": \"EY-1010\",\r\n        \"TYPE_CODE\": \"PR\",\r\n        \"CATEGORY\": \"Mice\",\r\n        \"NAME\": \"Anubhav product\",\r\n        \"DESCRIPTION\": \"Corporate Training on SAP UI5\",\r\n        \"SUPPLIER_ID\": \"0100000073\",\r\n        \"SUPPLIER_NAME\": \"Developement Para O Governo\",\r\n        \"TAX_TARIF_CODE\": \"1 \",\r\n        \"MEASURE_UNIT\": \"EA\",\r\n        \"PRICE\": \"11.00\",\r\n        \"CURRENCY_CODE\": \"ARS\",\r\n        \"DIM_UNIT\": \"CM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://103.207.171.202:8021/sap/opu/odata/sap/ZEY_AO_ODATA_SRV/ProductSet('EY-1010')",
+					"protocol": "http",
+					"host": [
+						"103",
+						"207",
+						"171",
+						"202"
+					],
+					"port": "8021",
+					"path": [
+						"sap",
+						"opu",
+						"odata",
+						"sap",
+						"ZEY_AO_ODATA_SRV",
+						"ProductSet('EY-1010')"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
