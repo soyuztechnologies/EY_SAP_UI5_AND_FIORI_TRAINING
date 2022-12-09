@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+          controllerName="emc2.sd.products.controller.View2">
+    <Page title="{PRODUCT_ID}" showNavButton="true" navButtonPress="onBack">
+        <content>
+            <ObjectHeader title="{PRODUCT_ID}" intro="{DESCRIPTION}" number="{PRICE}" 
+                          numberUnit="{CURRENCY_CODE}" icon="{image}"></ObjectHeader>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter text="More Info" icon="sap-icon://warning" key="idMore">
+                        <core:Fragment fragmentName="emc2.sd.products.fragments.moreInfo" type="XML" />
+                        <!-- <core:Fragment fragmentName="emc2.sd.products.fragments.moreInfo" type="XML" /> -->
+                    </IconTabFilter>
+                    <IconTabFilter text="Suppliers" icon="sap-icon://supplier" key="idSupplier">
+                        <core:Fragment fragmentName="emc2.sd.products.fragments.supplierTab" type="XML" />
+                    </IconTabFilter>
+                    <IconTabFilter text="Cities" icon="sap-icon://home" key="idCities">
+                        <core:Fragment fragmentName="emc2.sd.products.fragments.cities" type="XML" />
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Save" press="onSave" type="Accept"/>
+                <Button text="Cancel" press="onCancel" type="Reject"/>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
